@@ -21,12 +21,12 @@
       <div class="row m-2">
         <div class="col-3 d-grid gap-3 text-start">
           <h3>Search for a City:</h3>
-          <input class="form-control" placeholder="San Diego" type="text" />
-          <button id="searchCityBtn" class="btn btn-primary">Search</button>
+          <input id="cityInput" class="form-control" autofocus="true" placeholder="San Diego" type="text" />
+          <button id="searchCityBtn" type="submit" class="btn btn-primary">Search</button>
           <div class="border-top border-2 border-secondary"></div>
         </div>
         <div class="col-9 border border-secondary">
-          <h3 id="currentCityHeder">Atlanta</h3>
+          <h2 id="currentCityHeder">Choose a city to start</h2>
           <p>Temp: <span id="displayTemp"></span></p>
           <p>Wind: <span id="displayWind"></span></p>
           <p>Humidity: <span id="displayHumidity"></span></p>

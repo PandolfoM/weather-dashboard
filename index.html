@@ -15,14 +15,22 @@
   </head>
   <body>
     <header class="py-1">
-      <h1 class="col text-center">Weather Dashboard</h1>
+      <h1 class="col whiteText text-center">Weather Dashboard</h1>
     </header>
     <div class=".container-fluid">
       <div class="row m-2">
         <div class="col-3 d-grid gap-3 text-start">
           <h3>Search for a City:</h3>
-          <input id="cityInput" class="form-control" autofocus="true" placeholder="San Diego" type="text" />
-          <button id="searchCityBtn" type="submit" class="btn btn-primary">Search</button>
+          <input
+            id="cityInput"
+            class="form-control"
+            autofocus="true"
+            placeholder="San Diego"
+            type="text"
+          />
+          <button id="searchCityBtn" type="submit" class="btn btn-primary">
+            Search
+          </button>
           <div class="border-top border-2 border-secondary"></div>
         </div>
         <div class="col-9 border border-secondary">
@@ -37,31 +45,9 @@
         <div class="col-3 d-grid gap-3">
           <button class="btn btn-secondary">Pog</button>
         </div>
-        <div class="col-9 p-0">
-          <h3 class="text-left ">5-Day Forecast</h3>
-          <div class="row">
-            <!-- 5 Day forecast -->
-            <div class="col">
-              <p class="bg-primary">
-              </p>
-            </div>
-            <div class="col">
-              <p class="bg-primary">
-              </p>
-            </div>
-            <div class="col">
-              <p class="bg-primary">
-              </p>
-            </div>
-            <div class="col">
-              <p class="bg-primary">
-              </p>
-            </div>
-            <div class="col">
-              <p class="bg-primary">
-              </p>
-            </div>
-          </div>
+        <div class="col-9">
+          <h3 class="text-left">5-Day Forecast</h3>
+          <div id="forecast" class="row d-flex-grid gap-4"></div>
         </div>
       </div>
     </div>

@@ -59,12 +59,20 @@ function displayData(status) {
   windEl.textContent = status.current.wind_speed + " MPH";
   humidityEl.textContent = status.current.humidity + "%";
   uvEl.textContent = status.current.uvi;
-  uvEl.classList = "bg-success px-2 rounded text-white uvText";
+  uvEl.classList = "px-2 rounded text-white uvText";
+
+  if(status.current.uvi <= 2) {
+    uvEl.classList.add('bg-success');
+  } else if (status.current.uvi <= 7) {
+    uvEl.classList.add('bg-warning');
+  } else {
+    uvEl.classList.add('bg-danger');
+  }
 }
 
 function displayForecast(data) {
+  forecastEl.textContent = '';
   for (let i = 0; i < 5; i++) {
-    // console.log(data.daily[i].weather[0].icon);
     // date
     var date = new Date(data.daily[i].dt * 1000);
     // some reason the month is 1 behind :shrug:

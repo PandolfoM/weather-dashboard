@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header class="py-1">
+      <h1 class="col text-center">Weather Dashboard</h1>
+    </header>
+    <div class=".container-fluid">
+      <div class="row m-2">
+        <div class="col-3 d-grid gap-3 text-start">
+          <h3>Search for a City:</h3>
+          <input class="form-control" placeholder="San Diego" type="text" />
+          <button class="btn btn-primary">Search</button>
+          <div class="border-top border-2 border-secondary"></div>
+        </div>
+        <div class="col-9 border border-secondary">
+          <h3>Atlanta</h3>
+          <p>Temp: <span></span></p>
+          <p>Wind: <span></span></p>
+          <p>Humidity: <span></span></p>
+          <p>UV Index: <span></span></p>
+        </div>
+      </div>
+      <div class="row m-2">
+        <div class="col-3 d-grid gap-3">
+          <button class="btn btn-secondary">Pog</button>
+        </div>
+        <div class="col-9 p-0">
+          <h3 class="text-left ">5-Day Forecast</h3>
+          <div class="row">
+            <!-- 5 Day forecast -->
+            <div class="col">
+              <p class="bg-primary">
+              </p>
+            </div>
+            <div class="col">
+              <p class="bg-primary">
+              </p>
+            </div>
+            <div class="col">
+              <p class="bg-primary">
+              </p>
+            </div>
+            <div class="col">
+              <p class="bg-primary">
+              </p>
+            </div>
+            <div class="col">
+              <p class="bg-primary">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

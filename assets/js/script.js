@@ -25,7 +25,6 @@ function getCity(cityName) {
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(apiUrl);
         var date = new Date(data.dt * 1000);
         // some reason the month is 1 behind :shrug:
         var month = date.getMonth() + 1;
@@ -49,7 +48,7 @@ function getCity(cityName) {
             displayForecast(data);
           });
         });
-        // getAllData(data);
+        saveCity(cityName);
       });
     } else {
       alert("Error: Please enter a valid city");
@@ -123,6 +122,10 @@ function searchCity() {
   } else {
     alert("Please enter a city");
   }
+}
+
+function saveCity(cityName) {
+  localStorage.setItem('City', cityName);
 }
 
 searchCityBtn.addEventListener("click", searchCity);

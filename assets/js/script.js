@@ -9,8 +9,11 @@ var humidityEl = document.querySelector("#displayHumidity");
 var uvEl = document.querySelector("#displayUV");
 // 5 day forecast
 var forecastEl = document.querySelector("#forecast");
+var forecastHeaderEl = document.querySelector("#forecastHeader");
 
 var citySearchEl = document.querySelector("#cityInput");
+
+$(forecastHeaderEl).hide();
 
 function getCity(cityName) {
   var apiUrl =
@@ -55,6 +58,7 @@ function getCity(cityName) {
 }
 
 function displayData(status) {
+  $(forecastHeaderEl).show();
   tempEl.textContent = status.current.temp + "°F";
   windEl.textContent = status.current.wind_speed + " MPH";
   humidityEl.textContent = status.current.humidity + "%";

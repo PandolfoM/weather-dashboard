@@ -19,8 +19,8 @@
     </header>
     <div class=".container-fluid">
       <div class="row m-2">
-        <div class="col-3 d-grid gap-3 text-start">
-          <h3>Search for a City:</h3>
+        <div class="col-3 d-grid gap-3 lh-1 text-start">
+          <h3 class="m-0">Search for a City:</h3>
           <input
             id="cityInput"
             class="form-control"
@@ -42,15 +42,21 @@
         </div>
       </div>
       <div class="row m-2">
-        <div class="col-3 d-grid gap-3">
+        <div class="lh-1 col-3 d-grid gap-3">
+          <button class="btn btn-secondary">Pog</button>
+          <button class="btn btn-secondary">Pog</button>
+          <button class="btn btn-secondary">Pog</button>
           <button class="btn btn-secondary">Pog</button>
         </div>
         <div class="col-9">
-          <h3 class="text-left">5-Day Forecast</h3>
-          <div id="forecast" class="row d-flex-grid gap-4"></div>
+          <div class="row">
+            <h3 id="forecastHeader" class="text-start">5-Day Forecast:</h3>
+            <div id="forecast" class="row d-flex-grid gap-4"></div>
+          </div>
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

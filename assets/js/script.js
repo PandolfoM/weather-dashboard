@@ -125,7 +125,7 @@ function searchCity() {
 }
 
 function saveCity(cityName) {
-  localStorage.setItem('City', cityName);
+  localStorage.setItem('recentCity', cityName);
 }
 
 searchCityBtn.addEventListener("click", searchCity);

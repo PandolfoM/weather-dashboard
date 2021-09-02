@@ -24,6 +24,7 @@ function getCity(cityName) {
     apiKey;
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
+      saveCity(cityName);
       response.json().then(function (data) {
         var date = new Date(data.dt * 1000);
         // some reason the month is 1 behind :shrug:
@@ -48,7 +49,6 @@ function getCity(cityName) {
             displayForecast(data);
           });
         });
-        saveCity(cityName);
       });
     } else {
       alert("Error: Please enter a valid city");
@@ -125,7 +125,29 @@ function searchCity() {
 }
 
 function saveCity(cityName) {
-  localStorage.setItem('recentCity', cityName);
-}
+  var prevSearches = JSON.parse(localStorage.getItem('recentSearches'));
+  if (prevSearches === null) prevSearches = [];
+  var cityName = cityName.split('%20').join(' ');
+  var searched = {
+    'city': cityName
+  };
+  localStorage.setItem('searched', JSON.stringify(searched));
+  prevSearches.push(searched);
+  localStorage.setItem('recentSearches', JSON.stringify(prevSearches));
+};
+
+function retrieveCity() {
+  var recentSearches = localStorage.getItem('recentSearches');
+  var recentSearches = JSON.parse(recentSearches);
+
+  for (let i = 0; i < 10; i++) {
+    var recentBtn = document.createElement('button');
+    recentBtn.textContent = (recentSearches[i].city);
+    recentBtn.classList = 'btn btn-secondary'
+    var recentBtnEl = document.querySelector('#recentBtns');
+    recentBtnEl.appendChild(recentBtn);
+  }
+};
 
 searchCityBtn.addEventListener("click", searchCity);
+retrieveCity();

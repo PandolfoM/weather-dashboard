@@ -139,15 +139,16 @@ function saveCity(cityName) {
 function retrieveCity() {
   var recentSearches = localStorage.getItem('recentSearches');
   var recentSearches = JSON.parse(recentSearches);
-
+  var recentBtn = document.createElement('a');
+  var recentBtnEl = document.querySelector('#recentBtns');
+  
   for (let i = 0; i < 10; i++) {
-    var recentBtn = document.createElement('button');
     recentBtn.textContent = (recentSearches[i].city);
-    recentBtn.classList = 'btn btn-secondary'
-    var recentBtnEl = document.querySelector('#recentBtns');
+    recentBtn.classList = 'btn btn-secondary';
     recentBtnEl.appendChild(recentBtn);
   }
-};
+}
+
 
 searchCityBtn.addEventListener("click", searchCity);
 retrieveCity();

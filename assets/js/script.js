@@ -132,20 +132,24 @@ function saveCity(cityName) {
     'city': cityName
   };
   localStorage.setItem('searched', JSON.stringify(searched));
-  prevSearches.push(searched);
+  prevSearches.unshift(searched);
   localStorage.setItem('recentSearches', JSON.stringify(prevSearches));
 };
 
 function retrieveCity() {
   var recentSearches = localStorage.getItem('recentSearches');
-  var recentSearches = JSON.parse(recentSearches);
-  var recentBtn = document.createElement('a');
+  recentSearches = JSON.parse(recentSearches);
   var recentBtnEl = document.querySelector('#recentBtns');
   
   for (let i = 0; i < 10; i++) {
-    recentBtn.textContent = (recentSearches[i].city);
+    var recentBtn = document.createElement('button');
+    var btnText = recentSearches[i].city;
     recentBtn.classList = 'btn btn-secondary';
+    recentBtn.textContent = btnText;
     recentBtnEl.appendChild(recentBtn);
+    recentBtn.addEventListener("click", function() {
+      getCity(this.text);
+    });
   }
 }
 

@@ -142,13 +142,17 @@ function retrieveCity() {
   var recentBtnEl = document.querySelector('#recentBtns');
   
   for (let i = 0; i < 10; i++) {
+    if (i < 0 || i > 10){
+      break;
+    }
     var recentBtn = document.createElement('button');
-    var btnText = recentSearches[i].city;
+    var btnText = (recentSearches[i].city);
     recentBtn.classList = 'btn btn-secondary';
     recentBtn.textContent = btnText;
     recentBtnEl.appendChild(recentBtn);
     recentBtn.addEventListener("click", function() {
-      getCity(this.text);
+      getCity(this.textContent);
+      // console.log(this.textContent)
     });
   }
 }

@@ -17,7 +17,7 @@ $(forecastHeaderEl).hide();
 
 function getCity(cityName) {
   var apiUrl =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
     "&units=imperial" +
     "&appid=" +
@@ -95,7 +95,7 @@ function displayForecast(data) {
     forecastHeader.textContent = month + "/" + day + "/" + year;
     // icon
     var iconCode = data.daily[i].weather[0].icon;
-    var iconUrl = 'http://openweathermap.org/img/w/' + iconCode + '.png';
+    var iconUrl = 'https://openweathermap.org/img/w/' + iconCode + '.png';
     forecastIcon.src = iconUrl;
     forecastIcon.alt = data.daily[i].weather[0].main;
     // temp
